@@ -1,0 +1,169 @@
+/* WRATH OF YASH (YUVV) - Custom CSS Styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-obsidian: #08080c;
+  --bg-card: #0f1019;
+  --bg-card-hover: #161826;
+  --red-blood: #880808;
+  --red-bright: #dc2626;
+  --red-glow: rgba(220, 38, 38, 0.6);
+  --blue-darkmode: #1d4ed8;
+  --blue-bright: #3b82f6;
+  --blue-glow: rgba(59, 130, 246, 0.5);
+  --border-dark: #232738;
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: #e2e8f0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Font Classes */
+.font-wrath {
+  font-family: 'Cinzel', serif;
+}
+
+.font-tech {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-heading {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+/* Header Dark Blood Red Styling */
+.title-wrath-red {
+  color: #990000;
+  text-shadow: 
+    0 0 10px rgba(153, 0, 0, 0.8),
+    0 0 20px rgba(136, 8, 8, 0.6),
+    0 0 35px rgba(220, 38, 38, 0.4);
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, #ff1a1a 0%, #990000 60%, #4d0000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 12px rgba(153, 0, 0, 0.5));
+}
+
+/* Side Tagline Dark Blue Styling */
+.tagline-blue-darkmode {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1d4ed8 100%);
+  border: 1px solid #2563eb;
+  color: #93c5fd;
+  text-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.25), inset 0 0 10px rgba(59, 130, 246, 0.15);
+}
+
+/* Continuous Blinking Animation for BLEED JIWESH Banner */
+@keyframes intenseBlinkPulse {
+  0% {
+    opacity: 1;
+    color: #ff2222;
+    text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+    transform: scale(1);
+    background-color: rgba(136, 8, 8, 0.35);
+    border-color: rgba(239, 68, 68, 0.8);
+  }
+  25% {
+    opacity: 0.85;
+    color: #ffffff;
+    text-shadow: 0 0 20px #ff4444;
+    transform: scale(1.01);
+  }
+  50% {
+    opacity: 0.15;
+    color: #880000;
+    text-shadow: none;
+    transform: scale(0.99);
+    background-color: rgba(20, 0, 0, 0.6);
+    border-color: rgba(100, 0, 0, 0.4);
+  }
+  75% {
+    opacity: 0.9;
+    color: #ff3333;
+    text-shadow: 0 0 25px #ff0000;
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    color: #ff2222;
+    text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+    transform: scale(1);
+    background-color: rgba(136, 8, 8, 0.35);
+    border-color: rgba(239, 68, 68, 0.8);
+  }
+}
+
+.blink-warning-banner {
+  animation: intenseBlinkPulse 1.2s infinite ease-in-out;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1.5px;
+}
+
+/* Card Glow and Hover Effects */
+.card-wrath {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-wrath:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+  box-shadow: 0 8px 30px rgba(153, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Locked Paper Card Styling */
+.paper-card-locked {
+  border: 1px solid rgba(185, 28, 28, 0.4);
+  background: linear-gradient(180deg, #12080a 0%, #0c0b14 100%);
+}
+
+.paper-card-locked:hover {
+  border-color: #ef4444;
+  box-shadow: 0 0 25px rgba(220, 38, 38, 0.3);
+}
+
+/* Unlocked Paper Card Styling */
+.paper-card-unlocked {
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  background: linear-gradient(180deg, #061912 0%, #0c0b14 100%);
+}
+
+.paper-card-unlocked:hover {
+  border-color: #10b981;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+}
+
+/* Lock Pulse Animation */
+@keyframes lockPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 2px #ef4444); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 10px #dc2626); }
+  100% { transform: scale(1); filter: drop-shadow(0 0 2px #ef4444); }
+}
+
+.lock-icon-pulse {
+  animation: lockPulse 2s infinite ease-in-out;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08080c;
+}
+::-webkit-scrollbar-thumb {
+  background: #27273a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #990000;
+}
